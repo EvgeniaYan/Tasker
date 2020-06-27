@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Tasker</string>
+    <string name="time_format">%1$tH:%1$tM</string>
+</resources>

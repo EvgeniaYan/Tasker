@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+        <import type="java.util.Date"/>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.orderofdev.tasker.view.calendar.TaskItemViewModel" />
+        <variable
+            name="adapter"
+            type="com.orderofdev.tasker.view.calendar.CalendarAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:minWidth="50dp"
+        android:background="#FFFFFF">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/taskTime"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/startTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text = "@{@string/time_format(viewModel.startTime)}"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text ="-"/>
+            <TextView
+                android:id="@+id/finishTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text ="@{@string/time_format(viewModel.finishTime)}"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/taskName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@+id/taskTime"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@{viewModel.name}"
+            tool:text="Task Task Task" />
+    </RelativeLayout>
+
+
+</layout>
+
